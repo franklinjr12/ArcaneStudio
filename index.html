@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Arcane Studio — indie game development studio crafting 2D pixel-art worlds."
+      data-i18n-content="meta_description"
+      content="Arcane Studio — estúdio indie de desenvolvimento de jogos criando mundos em pixel art 2D."
     />
     <title>Arcane Studio</title>
     <link rel="icon" type="image/png" href="assets/logos/symbol-official.png" />
@@ -13,23 +14,28 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="logo" href="#top" aria-label="Arcane Studio home">
+      <a class="logo" href="#top" data-i18n-aria="logo_home" aria-label="Início Arcane Studio">
         <img src="assets/logos/symbol-official.png" alt="" width="52" height="52" />
         <span class="logo-text">
           <span class="brand">ARCANE</span>
           <span class="studio">STUDIO</span>
         </span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
+      <nav class="nav" data-i18n-aria="nav_primary" aria-label="Principal">
+        <a href="#about" data-i18n="nav_about">SOBRE</a>
+        <a href="#contact" data-i18n="nav_contact">CONTATO</a>
+        <div class="lang-switch" data-i18n-aria="lang_switch" role="group" aria-label="Idioma">
+          <button type="button" class="lang-btn is-active" data-lang="pt" aria-pressed="true">PT</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" aria-label="Welcome">
+      <section class="hero" data-i18n-aria="hero_label" aria-label="Boas-vindas">
         <div class="hero-content">
-          <h1 class="hero-title">Welcome to the digital realm of Arcane Studio</h1>
+          <h1 class="hero-title" data-i18n="hero_title">Bem-vindo ao reino digital da Arcane Studio</h1>
         </div>
       </section>
 
@@ -37,23 +43,24 @@
         <div class="about-visual reveal">
           <img
             src="assets/logos/symbol-official.png"
-            alt="Arcane Studio mascot — a pixel cat in a wizard hat"
+            data-i18n-alt="about_mascot_alt"
+            alt="Mascote da Arcane Studio — um gato pixelado de chapéu de mago"
             width="340"
             height="340"
           />
         </div>
         <div class="about-copy reveal">
-          <p class="about-label">ABOUT</p>
-          <h2 class="about-title">Indie game development company</h2>
-          <p class="about-body">
-            We create 2D pixel-art and 3D low-poly games that span platformers, roguelikes, action adventures, RPGs, and sports titles — immersive worlds designed to surprise you at every turn and make each playthrough truly unique.
+          <p class="about-label" data-i18n="about_label">SOBRE</p>
+          <h2 class="about-title" data-i18n="about_title">Empresa indie de desenvolvimento de jogos</h2>
+          <p class="about-body" data-i18n="about_body">
+            Criamos jogos 2D em pixel art e 3D low-poly que abrangem platformers, roguelikes, aventuras de ação, RPGs e títulos esportivos — mundos imersivos feitos para surpreender a cada virada e tornar cada partida verdadeiramente única.
           </p>
         </div>
       </section>
 
-      <section class="engine" aria-label="Game engine">
+      <section class="engine" data-i18n-aria="engine_label" aria-label="Motor de jogo">
         <div class="engine-row reveal">
-          <h2 class="engine-title">Our own Game Engine project</h2>
+          <h2 class="engine-title" data-i18n="engine_title">Nosso próprio projeto de Game Engine</h2>
           <a
             class="btn btn-engine"
             href="https://github.com/arcane2dstudio"
@@ -61,34 +68,34 @@
             rel="noopener noreferrer"
           >
             <img src="assets/icons/github.svg" alt="" width="20" height="20" />
-            check code
+            <span data-i18n="engine_cta">ver código</span>
           </a>
         </div>
         <div class="engine-band" role="presentation" aria-hidden="true"></div>
       </section>
 
-      <section class="features" aria-label="Studio pillars">
-        <p class="features-intro reveal">
-          Where creativity meets pixels and magic feels alive
+      <section class="features" data-i18n-aria="features_label" aria-label="Pilares do estúdio">
+        <p class="features-intro reveal" data-i18n="features_intro">
+          Onde a criatividade encontra os pixels e a magia ganha vida
         </p>
         <div class="features-grid">
           <article class="feature reveal">
             <img src="assets/icons/controller.png" alt="" width="72" height="72" />
-            <p>A custom gaming experience</p>
+            <p data-i18n="feature_custom">Uma experiência de jogo personalizada</p>
           </article>
           <article class="feature reveal">
             <img src="assets/icons/idea.png" alt="" width="72" height="72" />
-            <p>Our creative freedom</p>
+            <p data-i18n="feature_freedom">Nossa liberdade criativa</p>
           </article>
           <article class="feature reveal">
             <img src="assets/icons/computer.svg" alt="" width="72" height="72" />
-            <p>New discoveries on each playthrough</p>
+            <p data-i18n="feature_discoveries">Novas descobertas a cada partida</p>
           </article>
         </div>
       </section>
 
       <section class="contact" id="contact">
-        <h2 class="contact-heading reveal">CONTACT.</h2>
+        <h2 class="contact-heading reveal" data-i18n="contact_heading">CONTATO.</h2>
         <ul class="contact-list reveal">
           <li>
             <a href="mailto:arcane2dstudio@gmail.com">
@@ -103,7 +110,7 @@
               rel="noopener noreferrer"
             >
               <img src="assets/icons/youtube.svg" alt="" width="26" height="26" />
-              (in progress) @arcane2dstudio
+              <span data-i18n="social_progress">(em breve) @arcane2dstudio</span>
             </a>
           </li>
           <li>
@@ -113,13 +120,13 @@
               rel="noopener noreferrer"
             >
               <img src="assets/icons/x.svg" alt="" width="26" height="26" />
-              (in progress) @arcane2dstudio
+              <span data-i18n="social_progress">(em breve) @arcane2dstudio</span>
             </a>
           </li>
         </ul>
       </section>
 
-      <section class="message" aria-label="Send a message">
+      <section class="message" data-i18n-aria="message_label" aria-label="Envie uma mensagem">
         <img
           class="message-mascot tl"
           src="assets/logos/symbol-official.png"
@@ -145,22 +152,37 @@
           aria-hidden="true"
         />
         <div class="message-inner reveal">
-          <h2 class="message-title">SEND A MESSAGE</h2>
+          <h2 class="message-title" data-i18n="message_title">ENVIE UMA MENSAGEM</h2>
           <form class="form" id="contact-form" novalidate>
-            <label class="visually-hidden" for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Name" required autocomplete="name" />
-            <label class="visually-hidden" for="email">e-mail</label>
+            <label class="visually-hidden" for="name" data-i18n="form_name">Nome</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              data-i18n-placeholder="form_name"
+              placeholder="Nome"
+              required
+              autocomplete="name"
+            />
+            <label class="visually-hidden" for="email" data-i18n="form_email">e-mail</label>
             <input
               id="email"
               name="email"
               type="email"
+              data-i18n-placeholder="form_email"
               placeholder="e-mail"
               required
               autocomplete="email"
             />
-            <label class="visually-hidden" for="text">text</label>
-            <textarea id="text" name="text" placeholder="text" required></textarea>
-            <button class="btn btn-send" type="submit">SEND</button>
+            <label class="visually-hidden" for="text" data-i18n="form_text">mensagem</label>
+            <textarea
+              id="text"
+              name="text"
+              data-i18n-placeholder="form_text"
+              placeholder="mensagem"
+              required
+            ></textarea>
+            <button class="btn btn-send" type="submit" data-i18n="form_send">ENVIAR</button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -184,6 +206,6 @@
         border: 0;
       }
     </style>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

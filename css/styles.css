@@ -161,6 +161,38 @@ textarea {
   text-shadow: 0 0 18px rgba(184, 65, 217, 0.55);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.25rem;
+}
+
+.lang-sep {
+  color: rgba(184, 65, 217, 0.45);
+  font-weight: 300;
+  user-select: none;
+}
+
+.lang-btn {
+  color: rgba(184, 65, 217, 0.55);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.lang-btn:hover {
+  color: var(--white);
+  text-shadow: 0 0 18px rgba(184, 65, 217, 0.55);
+}
+
+.lang-btn.is-active {
+  color: var(--steel-pink);
+}
+
 .hero {
   min-height: 100vh;
   display: grid;
