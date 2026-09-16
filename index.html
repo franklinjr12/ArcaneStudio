@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Arcane Studio — independent game development studio crafting 2D pixel-art worlds."
+    />
+    <title>Arcane Studio</title>
+    <link rel="icon" type="image/png" href="assets/logos/symbol-official.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="Arcane Studio home">
+        <img src="assets/logos/symbol-official.png" alt="" width="52" height="52" />
+        <span class="logo-text">
+          <span class="brand">ARCANE</span>
+          <span class="studio">STUDIO</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Welcome">
+        <div class="hero-content">
+          <h1 class="hero-title">Welcome to the digital realm of Arcane Studio</h1>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-visual reveal">
+          <img
+            src="assets/logos/symbol-official.png"
+            alt="Arcane Studio mascot — a pixel cat in a wizard hat"
+            width="340"
+            height="340"
+          />
+        </div>
+        <div class="about-copy reveal">
+          <p class="about-label">ABOUT</p>
+          <h2 class="about-title">Independent game development company</h2>
+          <p class="about-body">
+            We craft 2D pixel-art games that blend platformers, roguelikes, action
+            narratives, and RPGs — worlds where every screen feels hand-drawn and
+            every run feels alive.
+          </p>
+        </div>
+      </section>
+
+      <section class="engine" aria-label="Game engine">
+        <div class="engine-row reveal">
+          <h2 class="engine-title">Development Game Engine</h2>
+          <a
+            class="btn btn-engine"
+            href="https://github.com/arcane2dstudio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="assets/icons/github.svg" alt="" width="20" height="20" />
+            check code
+          </a>
+        </div>
+        <div class="engine-band" role="presentation" aria-hidden="true"></div>
+      </section>
+
+      <section class="features" aria-label="Studio pillars">
+        <p class="features-intro reveal">
+          Where creativity meets pixels and magic feels alive
+        </p>
+        <div class="features-grid">
+          <article class="feature reveal">
+            <img src="assets/icons/controller.png" alt="" width="72" height="72" />
+            <p>A custom gaming experience</p>
+          </article>
+          <article class="feature reveal">
+            <img src="assets/icons/idea.png" alt="" width="72" height="72" />
+            <p>We use our own engine</p>
+          </article>
+          <article class="feature reveal">
+            <img src="assets/icons/computer.svg" alt="" width="72" height="72" />
+            <p>New discoveries on each playthrough</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2 class="contact-heading reveal">CONTACT.</h2>
+        <ul class="contact-list reveal">
+          <li>
+            <a href="mailto:arcane2dstudio@gmail.com">
+              <img src="assets/icons/email.png" alt="" width="26" height="26" />
+              arcane2dstudio@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@arcane2dstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/icons/youtube.svg" alt="" width="26" height="26" />
+              @arcane2dstudio (youtube)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com/arcane2dstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/icons/x.svg" alt="" width="26" height="26" />
+              @arcane2dstudio (x)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="message" aria-label="Send a message">
+        <img
+          class="message-mascot tl"
+          src="assets/logos/symbol-official.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="message-mascot tr"
+          src="assets/logos/symbol-official.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="message-mascot bl"
+          src="assets/logos/symbol-official.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <img
+          class="message-mascot br"
+          src="assets/logos/symbol-official.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="message-inner reveal">
+          <h2 class="message-title">SEND A MESSAGE</h2>
+          <form class="form" id="contact-form" novalidate>
+            <label class="visually-hidden" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Name" required autocomplete="name" />
+            <label class="visually-hidden" for="email">e-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="e-mail"
+              required
+              autocomplete="email"
+            />
+            <label class="visually-hidden" for="text">text</label>
+            <textarea id="text" name="text" placeholder="text" required></textarea>
+            <button class="btn btn-send" type="submit">SEND</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Arcane Studio</p>
+    </footer>
+
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+    <script src="js/main.js"></script>
+  </body>
+</html>
