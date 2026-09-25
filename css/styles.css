@@ -205,6 +205,30 @@ textarea {
   position: relative;
 }
 
+.work-in-progress {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: calc(var(--header-h) + 2rem) 1.5rem 4rem;
+  background-color: var(--black);
+  background-image: url("../assets/patterns/pattern-cat-purple.png");
+  background-size: 420px auto;
+  position: relative;
+  isolation: isolate;
+}
+
+.work-in-progress::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.82) 75%);
+}
+
+.work-in-progress .hero-title {
+  text-align: center;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -580,6 +604,81 @@ textarea {
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.85rem;
   border-top: 1px solid rgba(184, 65, 217, 0.12);
+}
+
+.site-footer .privacy-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: var(--steel-pink);
+  transition: color 0.2s ease;
+}
+
+.site-footer .privacy-link:hover {
+  color: var(--white);
+}
+
+.privacy-page {
+  min-height: 100vh;
+  padding: calc(var(--header-h) + 3rem) 8vw 4rem;
+  background: linear-gradient(180deg, var(--russian-violet) 0%, var(--penn-blue) 100%);
+}
+
+.privacy-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.privacy-content h1 {
+  color: var(--steel-pink);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.privacy-content .last-updated {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.25rem;
+}
+
+.privacy-content section {
+  margin-top: 2rem;
+}
+
+.privacy-content h2 {
+  color: var(--steel-pink);
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  line-height: 1.3;
+  margin-bottom: 0.65rem;
+}
+
+.privacy-content p,
+.privacy-content li {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.privacy-content p + p {
+  margin-top: 0.8rem;
+}
+
+.privacy-content ul {
+  padding-left: 1.4rem;
+  margin-top: 0.6rem;
+}
+
+.privacy-content li + li {
+  margin-top: 0.3rem;
+}
+
+.privacy-content a {
+  color: var(--steel-pink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.privacy-content a:hover {
+  color: var(--white);
 }
 
 .reveal {
