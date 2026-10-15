@@ -9,6 +9,34 @@
       content="Arcane Studio — estúdio indie de desenvolvimento de jogos criando mundos em pixel art 2D."
     />
     <title>Arcane Studio</title>
+    <link rel="canonical" href="https://arcanestudio.dev.br/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:title" content="Arcane Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arcanestudio.dev.br/" />
+    <meta property="og:site_name" content="Arcane Studio" />
+    <meta property="og:image" content="https://arcanestudio.dev.br/assets/logos/symbol-official.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://arcanestudio.dev.br/#organization",
+            "name": "Arcane Studio",
+            "url": "https://arcanestudio.dev.br/",
+            "logo": "https://arcanestudio.dev.br/assets/logos/symbol-official.png"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://arcanestudio.dev.br/#website",
+            "name": "Arcane Studio",
+            "url": "https://arcanestudio.dev.br/",
+            "publisher": { "@id": "https://arcanestudio.dev.br/#organization" }
+          }
+        ]
+      }
+    </script>
     <link rel="icon" type="image/png" href="assets/logos/symbol-official.png" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -22,6 +50,7 @@
         </span>
       </a>
       <nav class="nav" data-i18n-aria="nav_primary" aria-label="Principal">
+        <a href="beachvolleyballvr/" data-i18n="nav_game">O JOGO</a>
         <a href="#about" data-i18n="nav_about">SOBRE</a>
         <a href="#contact" data-i18n="nav_contact">CONTATO</a>
         <div class="lang-switch" data-i18n-aria="lang_switch" role="group" aria-label="Idioma">
@@ -36,6 +65,18 @@
       <section class="hero" data-i18n-aria="hero_label" aria-label="Boas-vindas">
         <div class="hero-content">
           <h1 class="hero-title" data-i18n="hero_title">Bem-vindo ao reino digital da Arcane Studio</h1>
+        </div>
+      </section>
+
+      <section class="studio-game" aria-labelledby="studio-game-title">
+        <a class="studio-game-art" href="beachvolleyballvr/" aria-labelledby="studio-game-title">
+          <img src="assets/beachvolleyballvr/store-main.jpg" width="1232" height="706" alt="Beach Volleyball VR" loading="lazy" />
+        </a>
+        <div>
+          <p class="about-label" data-i18n="game_label">NOSSO JOGO</p>
+          <h2 id="studio-game-title">Beach Volleyball VR</h2>
+          <p data-i18n="game_intro">Entre na areia e sinta cada jogada. Vôlei de praia 2v2, partidas online com amigos e treinos no seu ritmo, em realidade virtual.</p>
+          <a class="btn btn-engine" href="beachvolleyballvr/"><span data-i18n="game_cta">Conheça o jogo</span><span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
@@ -195,6 +236,14 @@
     </footer>
 
     <style>
+      .studio-game { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 5vw; padding: 5rem 8vw; background: #0c1534; }
+      .studio-game-art { display: block; overflow: hidden; border-radius: 8px; }
+      .studio-game-art img { width: 100%; transition: transform .3s; }
+      .studio-game-art:hover img { transform: scale(1.03); }
+      .studio-game h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.2; margin-bottom: 1rem; }
+      .studio-game p:not(.about-label) { color: #c6d2e5; margin-bottom: 1.5rem; max-width: 44ch; }
+      @media (max-width: 760px) { .studio-game { grid-template-columns: 1fr; padding-block: 3.5rem; gap: 2rem; } }
+      @media (max-width: 560px) { .site-header .nav { gap: .7rem; } .site-header .nav a { font-size: .64rem; letter-spacing: .04em; } .site-header .logo { gap: .4rem; } .site-header .logo img { width: 2rem; height: 2rem; } .site-header .logo-text .brand { font-size: .9rem; } .site-header .logo-text .studio { font-size: .57rem; } .site-header .lang-btn { font-size: .7rem; } .site-header .lang-switch { gap: .25rem; margin-left: 0; } }
       .visually-hidden {
         position: absolute;
         width: 1px;
