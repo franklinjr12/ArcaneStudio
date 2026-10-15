@@ -87,10 +87,14 @@
       <nav class="nav" data-i18n-aria="nav_primary" aria-label="Principal">
         <a href="../#about" data-i18n="nav_about">SOBRE</a>
         <a href="../#contact" data-i18n="nav_contact">CONTATO</a>
-        <div class="lang-switch" role="group" data-i18n-aria="lang_switch" aria-label="Idioma">
-          <button type="button" class="lang-btn is-active" data-lang="pt" aria-pressed="true">PT</button>
-          <span class="lang-sep" aria-hidden="true">|</span>
-          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-menu">
+          <button type="button" class="lang-toggle" aria-expanded="false" aria-controls="lang-list">
+            <svg class="lang-globe" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+            <span class="visually-hidden" data-i18n="lang_switch">Idioma</span>
+            <span class="lang-current">PT</span>
+            <svg class="lang-chevron" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+          <ul class="lang-list" id="lang-list" hidden></ul>
         </div>
       </nav>
     </header>

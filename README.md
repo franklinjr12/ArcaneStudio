@@ -14,8 +14,16 @@ Open http://localhost:4173/ for the studio homepage or
 http://localhost:4173/beachvolleyballvr/ for the game's dedicated page.
 Pass a different port with `node tools/serve.mjs 8080`.
 
-The game page supports Portuguese and English, stores the language choice,
-and links to the Meta Quest wishlist. Steam appears as a disabled “Coming soon”
+All pages support Portuguese, English, Spanish, French, Japanese and
+Simplified Chinese through a language dropdown in the header. The choice is
+stored and shared across pages. `js/language.js` holds the language list,
+detection and dropdown; each page keeps its authored language in the HTML
+(Portuguese, or English on the privacy policy) and loads the rest from
+`js/translations.js`, `js/beachvolleyballvr-translations.js` or
+`js/privacy-translations.js`. The translations have not yet been reviewed by
+native speakers; review the privacy policy translations before relying on them.
+
+The game page links to the Meta Quest wishlist. Steam appears as a disabled “Coming soon”
 store option until its store URL is ready. The gallery supports click-to-expand,
 keyboard focus and Escape to close. Release information follows the current
 Meta listing; no release date or Steam store link is assumed.
@@ -50,8 +58,8 @@ The game page's layout, colors and responsive styles are in
 - The game page includes localized descriptions, Open Graph and large-image
   social cards. Canonical URLs always use the production HTTPS domain.
 - All core page content and game metadata are in the initial HTML, available
-  without running JavaScript. Both language options currently share one URL;
-  separate pre-rendered English URLs with reciprocal hreflang annotations are
+  without running JavaScript. All language options currently share one URL;
+  separate pre-rendered URLs per language with reciprocal hreflang annotations are
   the next international SEO improvement. Do not add hreflang for nonexistent pages.
 
 After deploying, submit `https://arcanestudio.dev.br/sitemap.xml` in Google
