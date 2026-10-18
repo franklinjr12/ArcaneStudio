@@ -3,6 +3,7 @@ export const defaultLanguage = "pt";
 
 export const translations = {
   pt: {
+    beach_steam_cta: "Adicionar à lista de desejos no Steam",
     meta_description:
       "Arcane Studio — estúdio indie de desenvolvimento de jogos criando mundos em pixel art 2D.",
     logo_home: "Início Arcane Studio",
@@ -38,6 +39,7 @@ export const translations = {
     form_subject: "Mensagem de",
   },
   en: {
+    beach_steam_cta: "Wishlist on Steam",
     meta_description:
       "Arcane Studio — indie game development studio crafting 2D pixel-art worlds.",
     logo_home: "Arcane Studio home",
