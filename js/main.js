@@ -1,35 +1,17 @@
+import { translations, defaultLanguage } from "./translations.js";
 import {
-  translations,
   supportedLanguages,
-  defaultLanguage,
-} from "./translations.js";
+  getLanguage,
+  detectLanguage,
+  saveLanguage,
+  initLanguageMenu,
+} from "./language.js";
 
 let currentLanguage = defaultLanguage;
 
 const yearEl = document.getElementById("year");
 if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
-}
-
-function detectLanguage() {
-  const savedLanguage = localStorage.getItem("language");
-
-  if (savedLanguage && supportedLanguages.includes(savedLanguage)) {
-    return savedLanguage;
-  }
-
-  const preferred = navigator.languages?.length
-    ? navigator.languages
-    : [navigator.language];
-
-  for (const locale of preferred) {
-    const language = locale.split("-")[0].toLowerCase();
-    if (supportedLanguages.includes(language)) {
-      return language;
-    }
-  }
-
-  return defaultLanguage;
 }
 
 function applyText(selector, attr, value) {
@@ -55,7 +37,7 @@ function renderLanguage(language) {
   const text = translations[language] || translations[defaultLanguage];
   currentLanguage = language;
 
-  document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+  document.documentElement.lang = getLanguage(language).htmlLang;
 
   applyText("[data-i18n]", "data-i18n", text);
   applyText("[data-i18n-placeholder]", "data-i18n-placeholder", text);
@@ -63,26 +45,17 @@ function renderLanguage(language) {
   applyText("[data-i18n-alt]", "data-i18n-alt", text);
   applyText("[data-i18n-content]", "data-i18n-content", text);
 
-  document.querySelectorAll("[data-lang]").forEach((btn) => {
-    const isActive = btn.getAttribute("data-lang") === language;
-    btn.setAttribute("aria-pressed", String(isActive));
-    btn.classList.toggle("is-active", isActive);
-  });
+  languageMenu.setActive(language);
 }
 
 function setLanguage(language) {
   if (!supportedLanguages.includes(language)) return;
-  localStorage.setItem("language", language);
+  saveLanguage(language);
   renderLanguage(language);
 }
 
-document.querySelectorAll("[data-lang]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    setLanguage(btn.getAttribute("data-lang"));
-  });
-});
-
-renderLanguage(detectLanguage());
+const languageMenu = initLanguageMenu(setLanguage);
+renderLanguage(detectLanguage(defaultLanguage));
 
 const reveals = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {

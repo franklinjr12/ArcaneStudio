@@ -145,6 +145,7 @@ textarea {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -161,36 +162,130 @@ textarea {
   text-shadow: 0 0 18px rgba(184, 65, 217, 0.55);
 }
 
-.lang-switch {
+.lang-menu {
+  position: relative;
   display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
   margin-left: 0.25rem;
 }
 
-.lang-sep {
-  color: rgba(184, 65, 217, 0.45);
-  font-weight: 300;
-  user-select: none;
-}
-
-.lang-btn {
-  color: rgba(184, 65, 217, 0.55);
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(184, 65, 217, 0.4);
+  border-radius: 6px;
+  color: var(--steel-pink);
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
+  white-space: nowrap;
   cursor: pointer;
-  padding: 0;
-  transition: color 0.25s ease, text-shadow 0.25s ease;
+  transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.lang-btn:hover {
+.lang-toggle:hover,
+.lang-toggle[aria-expanded="true"] {
   color: var(--white);
-  text-shadow: 0 0 18px rgba(184, 65, 217, 0.55);
+  border-color: var(--steel-pink);
+  box-shadow: 0 0 18px rgba(184, 65, 217, 0.35);
 }
 
-.lang-btn.is-active {
+.lang-toggle:focus-visible,
+.lang-option:focus-visible {
+  outline: 2px solid var(--steel-pink);
+  outline-offset: 2px;
+}
+
+.lang-toggle svg {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lang-toggle[aria-expanded="true"] .lang-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-list {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 110;
+  min-width: 10.5rem;
+  padding: 0.35rem;
+  list-style: none;
+  background: var(--russian-violet);
+  border: 1px solid rgba(184, 65, 217, 0.45);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), 0 0 24px rgba(184, 65, 217, 0.18);
+}
+
+.lang-list[hidden] {
+  display: none;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-option:hover,
+.lang-option:focus-visible {
+  background: rgba(184, 65, 217, 0.18);
+  color: var(--white);
+}
+
+.lang-option.is-active {
   color: var(--steel-pink);
+  font-weight: 600;
+}
+
+.lang-option.is-active::after {
+  content: "✓";
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Pitagon Sans has no CJK glyphs, so Japanese and Chinese fall back to system fonts. */
+:lang(ja) {
+  font-family: "Pitagon Sans", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", sans-serif;
+}
+
+:lang(zh) {
+  font-family: "Pitagon Sans", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", sans-serif;
+}
+
+/* Keep Japanese headings from breaking inside words where the browser supports phrase detection. */
+:lang(ja) :is(h1, h2, h3, .hero-tagline) {
+  word-break: auto-phrase;
+}
+
+html:is(:lang(ja), :lang(zh)) :is(.nav a, main :is(h1, h2, h3, p, span, summary, a, button), .site-footer :is(p, a)) {
+  letter-spacing: 0.02em;
 }
 
 .hero {
@@ -743,6 +838,21 @@ textarea {
 
   .nav a {
     font-size: 0.8rem;
+  }
+
+  .lang-toggle {
+    gap: 0.3rem;
+    padding: 0.3rem 0.45rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .lang-toggle .lang-globe {
+    display: none;
+  }
+
+  .lang-menu {
+    margin-left: 0;
   }
 
   .hero-content {
