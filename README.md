@@ -23,9 +23,8 @@ detection and dropdown; each page keeps its authored language in the HTML
 `js/privacy-translations.js`. The translations have not yet been reviewed by
 native speakers; review the privacy policy translations before relying on them.
 
-The game page links to the Meta Quest and Steam wishlists. The gallery supports
-click-to-expand, keyboard focus and Escape to close. The game remains coming soon;
-no release date is assumed.
+The game page links to the Meta Quest and Steam store listings, where the game is
+released. The gallery supports click-to-expand, keyboard focus and Escape to close.
 
 ## Game assets
 
@@ -65,4 +64,4 @@ After deploying, submit `https://arcanestudio.dev.br/sitemap.xml` in Google
 Search Console and Bing Webmaster Tools, inspect the game URL, and check the
 live site with Schema.org Validator and PageSpeed Insights. Submission and
 structured data do not guarantee indexing, rich results, AI citations or rankings.
-Update the game metadata, visible release copy, and Steam link together at launch.
+Keep the game metadata, visible release copy, and store links in sync when they change.
